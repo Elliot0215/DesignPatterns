@@ -34,5 +34,5 @@ class MyTranslate(BaseTranslate):
 yd = YouDaoInterface()
 t = MyTranslate(yd)
 print(t.translate('今の時間帯が混んでいるから,インターネットのアクセスは悪い'))
-
+print(t.translate('one'))
 
