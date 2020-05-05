@@ -30,9 +30,9 @@ class MyTranslate(BaseTranslate):
         self.interface.interface_api(src)
         return self.interface.parse()
 
-
+'''
 yd = YouDaoInterface()
 t = MyTranslate(yd)
 print(t.translate('今の時間帯が混んでいるから,インターネットのアクセスは悪い'))
 print(t.translate('one'))
-
+'''
