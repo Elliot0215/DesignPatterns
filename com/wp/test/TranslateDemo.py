@@ -21,16 +21,18 @@ class YouDaoInterface(BaseInterface):
     def interface_api(self,src):
         self.result = requests.get("http://fanyi.youdao.com/translate?&doctype=json&type=AUTO&i={}".format(src))
 
-    def parse_json(self):
+    def parse(self):
         return json.loads(self.result.text)['translateResult'][0][0]['tgt']
 
 
 class MyTranslate(BaseTranslate):
     def translate(self,src):
         self.interface.interface_api(src)
-        return self.interface.parse_json()
+        return self.interface.parse()
+
 
 yd = YouDaoInterface()
 t = MyTranslate(yd)
-print(t.translate('hello'))
+print(t.translate('今の時間帯が混んでいるから,インターネットのアクセスは悪い'))
+
 
