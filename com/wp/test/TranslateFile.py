@@ -1,8 +1,7 @@
 from com.wp.test.TranslateApi import *
 
 def translateFile():
-    yd = YouDaoInterface()
-    t = MyTranslate(yd)
+    t = MyTranslate(YouDaoInterface())
     with open("D:\\Desktop\\123\\chinese.txt","r",encoding="utf-8") as fr:
         for line in fr.readlines():
             line = line.replace("。", ".")
