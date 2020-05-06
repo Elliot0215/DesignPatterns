@@ -1,8 +1,11 @@
 from com.wp.test.TranslateApi import *
+import os
+
+filepath = os.path.abspath(os.path.join(os.getcwd(), "../../.."))
 
 def translateFile():
     t = MyTranslate(YouDaoInterface())
-    with open("D:\\Desktop\\123\\chinese.txt","r",encoding="utf-8") as fr:
+    with open(filepath + "/files/chinese.txt","r",encoding="utf-8") as fr:
         for line in fr.readlines():
             line = line.replace("。", ".")
             print(t.translate(line))
@@ -10,7 +13,7 @@ def translateFile():
         fr.close()
 
 def saveFile(context):
-    with open("D:\\Desktop\\123\\english.txt","a+",encoding="utf-8") as fw:
+    with open(filepath + "/files/english.txt","a+",encoding="utf-8") as fw:
         fw.write(context + "\n")
         fw.close()
 
