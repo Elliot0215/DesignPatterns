@@ -5,6 +5,7 @@ def translateFile():
     t = MyTranslate(yd)
     with open("D:\\Desktop\\123\\chinese.txt","r",encoding="utf-8") as fr:
         for line in fr.readlines():
+            line = line.replace("。", ".")
             print(t.translate(line))
             saveFile(t.translate(line))
         fr.close()
