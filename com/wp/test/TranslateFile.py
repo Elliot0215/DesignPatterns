@@ -14,6 +14,7 @@ def saveFile(context):
         fw.write(context + "\n")
         fw.close()
 
-translateFile()
+if __name__ == '__main__':
+    translateFile()
 
 
